@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>스마트폰·태블릿 사용 설명서 | Dream Music Player</title>
+  <style>
+    :root{--ink:#1b2430;--muted:#52606d;--line:#dce4ec;--brand:#0759b6;--bg:#f6f9fc;--accent:#eef7ff}*{box-sizing:border-box}html{scroll-behavior:smooth}body{max-width:900px;margin:0 auto;padding:32px 20px 56px;font:16px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--bg)}main{background:#fff;border:1px solid var(--line);border-radius:18px;padding:clamp(22px,5vw,48px);box-shadow:0 8px 26px #0d2d4a0c}h1{margin:0;font-size:clamp(2rem,6vw,3rem);line-height:1.2}h2{margin:3rem 0 1rem;padding-top:.35rem;border-top:1px solid var(--line);font-size:1.5rem}h3{margin:1.7rem 0 .5rem;font-size:1.1rem}p{margin:.55rem 0}a{color:var(--brand)}.lead{color:var(--muted);font-size:1.1rem}.box,.tip{border-radius:12px;padding:16px 18px;margin:1rem 0}.box{background:#f8fafc;border:1px solid var(--line)}.tip{background:var(--accent);border-left:4px solid #4a8ddb}nav{margin:1.6rem 0;padding:14px 17px;background:#f0f5fa;border-radius:12px}nav ul{columns:2;margin:.3rem 0;padding-left:1.2rem}ul,ol{padding-left:1.3rem}li{margin:.3rem 0}footer{margin-top:2rem;color:var(--muted);font-size:.92rem}@media(max-width:560px){body{padding:12px 10px 32px}main{border-radius:12px}nav ul{columns:1}}
+  </style>
+</head>
+<body><main>
+  <h1>📱 스마트폰 · 태블릿 사용 설명서</h1>
+  <p class="lead">Android 휴대폰과 태블릿의 터치 화면에서 Dream Music Player를 사용하는 안내입니다. 화면 크기에 따라 세로·가로 배치가 달라져도 기능은 동일합니다.</p>
+  <nav><strong>목차</strong><ul><li><a href="#start">빠른 시작</a></li><li><a href="#sources">음악 소스</a></li><li><a href="#library">탐색과 재생목록</a></li><li><a href="#media">동영상·가사</a></li><li><a href="#settings">설정과 문제 해결</a></li></ul></nav>
+  <h2 id="start">1. 빠른 시작</h2>
+  <ol><li>앱 왼쪽 메뉴에서 <strong>소스</strong>를 누릅니다.</li><li>음악이 있는 저장 위치를 선택하고 스캔을 시작합니다.</li><li><strong>음악</strong>, <strong>아티스트</strong>, <strong>앨범</strong>, <strong>폴더</strong> 중 원하는 보기에서 곡을 탭하면 재생됩니다.</li></ol>
+  <p class="tip">첫 스캔 중에도 먼저 준비된 항목을 볼 수 있습니다. 스캔 안내창의 <strong>OK(백그라운드 진행)</strong>을 누르면 나머지 탐색은 계속됩니다.</p>
+  <h2 id="sources">2. 음악 소스 연결</h2>
+  <h3>내장 저장소</h3><div class="box"><strong>소스 → 내장 저장소</strong><br>휴대폰 또는 태블릿에 저장된 음악을 스캔합니다. 새 파일을 넣은 뒤에는 화면 상단의 <strong>다시 스캔</strong>을 누르세요.</div>
+  <h3>USB 음악 폴더</h3><div class="box"><strong>소스 → USB 음악 폴더</strong><br>Android 폴더 선택 화면에서 USB 또는 외장 저장소 안의 음악 폴더를 선택합니다. 선택 위치는 앱이 기억합니다.</div>
+  <h3>Google Drive</h3><div class="box"><strong>소스 → Google Drive → Google 계정 로그인</strong><br>앱은 Drive의 음악 파일과 폴더를 찾아 재생하기 위해 읽기 전용 권한을 요청합니다. 업로드·수정·삭제 권한은 요청하지 않습니다.</div><ul><li>로그인 후 폴더를 직접 열거나 전체 라이브러리를 스캔할 수 있습니다.</li><li>파일이 많은 경우 첫 목록을 먼저 표시한 뒤 나머지 스캔을 백그라운드에서 수행합니다.</li><li>로그인 만료 안내가 나오면 Google Drive를 다시 선택해 로그인합니다.</li></ul>
+  <h3>NAS WebDAV</h3><div class="box"><strong>소스 → 시놀로지 NAS WebDAV</strong><br>표시 이름, 호스트, 사용자 이름, 비밀번호를 입력한 뒤 <strong>저장 및 스캔</strong>을 누릅니다. 필요하면 포트와 경로를 지정합니다.</div><ul><li>가능하면 HTTPS를 사용하세요.</li><li>공인되지 않은 인증서 경고가 나오면 NAS 관리 화면의 SHA-256 지문과 정확히 일치할 때만 승인하세요.</li></ul>
+  <h2 id="library">3. 탐색과 재생목록</h2>
+  <ul><li><strong>아티스트·앨범·음악</strong>: 음악 파일의 태그를 기준으로 분류합니다.</li><li><strong>폴더</strong>: 실제 폴더 구조를 따라 탐색하고 파일명·제목·가수 순으로 정렬할 수 있습니다.</li><li><strong>검색</strong>: 현재 소스에서 제목 또는 가수명으로 찾습니다.</li><li><strong>즐겨찾기·재생목록</strong>: 자주 듣는 곡을 모으고 새 재생목록을 만들 수 있습니다.</li></ul>
+  <h3>스와이프 동작</h3><ul><li>곡을 <strong>왼쪽으로 밀기</strong>: 지금 재생, 다음에 재생, 대기열 추가, 재생목록 열기</li><li>곡을 <strong>오른쪽으로 밀기</strong>: 재생목록 추가, 즐겨찾기, 라이브러리에서 제거</li></ul><p>라이브러리에서 제거해도 원본 파일은 삭제되지 않습니다. 앱의 색인 항목만 제거됩니다.</p>
+  <h2 id="media">4. 동영상과 가사</h2>
+  <h3>동영상</h3><p>동영상 메뉴가 표시되면 동영상 파일을 선택해 재생할 수 있습니다. Google Drive와 WebDAV에서는 같은 폴더의 같은 파일명 기반 자막을 선택할 수 있습니다.</p>
+  <h3>가사</h3><p>재생 화면에서 가사를 열면 곡명과 가수 정보로 온라인 가사를 조회합니다. 시간 정보가 있는 가사는 재생 시점에 맞춰 강조됩니다. 결과가 없으면 Google 또는 Naver 가사 검색으로 이동할 수 있습니다.</p>
+  <h2 id="settings">5. 설정과 문제 해결</h2>
+  <ul><li><strong>사운드</strong>: 20밴드 Pro Equalizer, ReplayGain 음량 정규화, Loudness 보정</li><li><strong>재생 환경</strong>: 이전 재생 위치 기억, 셔플 상태 유지, 다음 그룹 자동 이어 재생, 폴더 파일 정렬</li><li><strong>UI 테마</strong>: 여러 색상 테마를 즉시 적용</li></ul>
+  <h3>연결 또는 파일 표시 문제</h3><p>현재 소스를 확인한 뒤 <strong>다시 스캔</strong>을 실행하세요. USB는 연결 상태와 폴더 권한을, Drive와 NAS는 네트워크·로그인·주소 정보를 확인합니다. 계속 문제가 발생하면 <a href="../../support/">고객 지원</a>으로 기기 모델과 오류 메시지를 보내 주세요.</p>
+  <footer><a href="../">기기별 설명서 선택</a> · <a href="../../">Dream Music Player 홈</a> · <a href="../../privacy/">개인정보처리방침</a></footer>
+</main></body></html>
