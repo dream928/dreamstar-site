@@ -14,7 +14,8 @@
     .card { display:block; min-height:220px; padding:26px; border:1px solid var(--line); border-radius:16px; color:inherit; text-decoration:none; background:linear-gradient(145deg,#fff,#f3f8fe); transition:transform .15s,box-shadow .15s; }
     .card:hover { transform:translateY(-3px); box-shadow:0 10px 22px #0c35521a; } .card h2 { margin:0 0 10px; color:#123a66; font-size:1.5rem; } .card p { margin:0; }
     .tag { display:inline-block; padding:3px 9px; border-radius:999px; background:#e6f1ff; color:#0759b6; font-size:.85rem; font-weight:700; }
-    footer { margin-top:2.5rem; color:var(--muted); font-size:.92rem; } @media(max-width:620px) { body { padding:12px 10px 32px; } main { border-radius:12px; } .choices { grid-template-columns:1fr; } }
+    h2 { margin-top:2.5rem; } table { width:100%; border-collapse:collapse; margin:1rem 0; font-size:.94rem; } th,td { padding:10px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; } th { background:#f0f5fa; } .current { color:#08783e; font-weight:700; } .planned { color:#75530d; font-weight:700; } .note { padding:14px 16px; border-left:4px solid #e18a19; background:#fff3df; border-radius:10px; }
+    footer { margin-top:2.5rem; color:var(--muted); font-size:.92rem; } @media(max-width:620px) { body { padding:12px 10px 32px; } main { border-radius:12px; } .choices { grid-template-columns:1fr; } table { font-size:.85rem; } th,td { padding:8px 6px; } }
   </style>
 </head>
 <body>
@@ -26,6 +27,21 @@
       <a class="card" href="mobile/"><h2>📱 Android 스마트폰 · 태블릿</h2><p>터치 화면에서 로컬 저장소, USB, Google Drive, NAS(WebDAV)를 연결하고 음악·동영상·가사를 사용하는 방법입니다.</p></a>
       <a class="card" href="aaos/"><h2>🚗 차량 Android Automotive OS</h2><p>AAOS Media Center에서 라이브러리를 탐색하고, 정차 상태에서 안전하게 소스·재생·동영상 기능을 사용하는 방법입니다.</p></a>
     </section>
+    <h2>폴스타 4 주요 시장·표시 언어</h2>
+    <p>아래 표는 제공해 주신 주요 시장을 기준으로 한 앱 표시 언어 현황과 현지화 우선순위입니다.</p>
+    <div class="note"><strong>현재 앱 표시 언어:</strong> 한국어, English. 설정 화면에서 직접 선택합니다. 표의 ‘권장 추가 언어’는 향후 현지화 우선순위이며, 현재 배포본에 구현됐다는 뜻은 아닙니다.</div>
+    <table>
+      <thead><tr><th>주요 시장</th><th>권장 기본 언어</th><th>현재 앱 상태</th><th>권장 추가 언어</th></tr></thead>
+      <tbody>
+        <tr><td>한국</td><td>한국어</td><td class="current">지원</td><td>—</td></tr>
+        <tr><td>중국</td><td>중국어(간체)</td><td class="planned">미구현</td><td>중국어(간체)</td></tr>
+        <tr><td>독일</td><td>독일어</td><td class="planned">미구현</td><td>독일어</td></tr>
+        <tr><td>노르웨이</td><td>노르웨이어 보크몰</td><td class="planned">미구현</td><td>노르웨이어 보크몰</td></tr>
+        <tr><td>호주 · 영국 · 미국</td><td>English</td><td class="current">지원</td><td>—</td></tr>
+        <tr><td>기타 유럽 시장</td><td>시장별 현지 언어</td><td class="planned">English 제공</td><td>프랑스어, 스웨덴어, 네덜란드어, 이탈리아어, 스페인어 등</td></tr>
+      </tbody>
+    </table>
+    <p>시장 제공 여부와 차량 서비스 구성은 국가·모델 연도에 따라 달라질 수 있습니다. Polestar의 지원 가능 시장 정보는 <a href="https://www.polestar.com/uk/manual/polestar-2/2026/article/2c519703677f557bc0a801514de8cc2f/" rel="noopener">Polestar Connect 시장 안내</a>에서 별도로 확인하세요.</p>
     <p><a href="../">Dream Music Player 홈으로</a> · <a href="../support/">고객 지원</a></p>
     <footer>최종 업데이트: 2026-09-11</footer>
   </main>
