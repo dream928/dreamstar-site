@@ -102,6 +102,18 @@
     es:"Las capturas siguientes se realizaron en un AAOS AVD y pueden diferir ligeramente de la consola real del vehículo.",
     pt:"As capturas abaixo foram feitas num AAOS AVD e podem diferir ligeiramente do ecrã real da consola do veículo."
   };
+  const mobileCaptureNote = {
+    ko:"아래 캡처 이미지는 Android AVD의 태블릿 가로 모드를 기준으로 촬영된 이미지이므로, 실제 스마트폰과 태블릿 기종에 따라 UI 화면은 다소 다를 수 있습니다.",
+    en:"The screenshots below were captured from an Android AVD in tablet landscape mode. The UI may vary slightly across actual phone and tablet models.",
+    zh:"以下截图以 Android AVD 的平板横向模式为准，不同实际手机和平板型号的界面可能略有不同。",
+    de:"Die folgenden Screenshots wurden auf einem Android AVD im Tablet-Querformat aufgenommen. Die Benutzeroberfläche kann je nach tatsächlichem Smartphone- oder Tablet-Modell leicht abweichen.",
+    no:"Skjermbildene nedenfor er tatt på en Android AVD i nettbrettets liggende modus. Grensesnittet kan variere noe mellom faktiske mobil- og nettbrettmodeller.",
+    fr:"Les captures ci-dessous ont été réalisées sur un AVD Android en mode tablette paysage. L’interface peut légèrement varier selon les modèles réels de téléphone et de tablette.",
+    nl:"De onderstaande schermafbeeldingen zijn gemaakt op een Android AVD in tablet-liggende stand. De interface kan enigszins verschillen per daadwerkelijk telefoon- of tabletmodel.",
+    it:"Le schermate seguenti sono acquisite su un Android AVD in modalità tablet orizzontale. L’interfaccia può variare leggermente tra i modelli reali di smartphone e tablet.",
+    es:"Las capturas siguientes se realizaron en un Android AVD con tablet en modo horizontal. La interfaz puede variar ligeramente según el modelo real de teléfono o tableta.",
+    pt:"As capturas abaixo foram feitas num Android AVD em modo tablet horizontal. A interface pode variar ligeiramente consoante o modelo real de telemóvel ou tablet."
+  };
   const screenshots = {
     mobile:["source-tab.png","library.png","library.png","vehicle-now-playing.png","aaos-quality.png","aaos-dsp.png"],
     aaos:["aaos-quality.png","library.png","aaos-media-center.png","aaos-now-playing.png","aaos-quality.png","aaos-dsp.png"]
@@ -112,7 +124,7 @@
     if(page==="manual") return '<h1>'+d[0]+'</h1><p class="lead">'+d[1]+'</p><div class="cards"><a href="'+APP+'manual/mobile/?lang='+lang+'"><h2>📱 '+d[2]+'</h2><p>'+d[3]+'</p></a><a href="'+APP+'manual/aaos/?lang='+lang+'"><h2>🚗 '+d[4]+'</h2><p>'+d[5]+'</p></a></div>';
     const type = page === "mobile" ? "mobile" : "aaos", x = d;
     const shots = screenshots[type];
-    return '<h1>'+x[0]+'</h1><p class="lead">'+x[1]+'</p>'+(type==="aaos" ? '<p class="capture-note">'+aaosCaptureNote[lang]+'</p>' : '')+section(x[2],x[3],shots[0])+section(x[4],x[5],shots[1])+section(x[6],x[7],shots[2])+section(nowPlaying[lang][0],nowPlaying[lang][1],shots[3])+section(x[10],x[11],shots[4])+section(quality[lang][type][0],quality[lang][type][1],shots[5])+section(proFx[lang][0],proFx[lang][1],"dream-pro-fx.png")+(type==="aaos" ? section(vehicleDisplay[lang][0],vehicleDisplay[lang][1],"vehicle-fullscreen-vu.gif") : '')+'<p class="footer">'+link("manual/",ui[lang].back)+" · "+link("support/",ui[lang].support)+'</p>';
+    return '<h1>'+x[0]+'</h1><p class="lead">'+x[1]+'</p><p class="capture-note">'+(type==="aaos" ? aaosCaptureNote[lang] : mobileCaptureNote[lang])+'</p>'+section(x[2],x[3],shots[0])+section(x[4],x[5],shots[1])+section(x[6],x[7],shots[2])+section(nowPlaying[lang][0],nowPlaying[lang][1],shots[3])+section(x[10],x[11],shots[4])+section(quality[lang][type][0],quality[lang][type][1],shots[5])+section(proFx[lang][0],proFx[lang][1],"dream-pro-fx.png")+(type==="aaos" ? section(vehicleDisplay[lang][0],vehicleDisplay[lang][1],"vehicle-fullscreen-vu.gif") : '')+'<p class="footer">'+link("manual/",ui[lang].back)+" · "+link("support/",ui[lang].support)+'</p>';
   }
   const page = document.body.dataset.page || "home", d = docs[lang][page] || docs.en[page];
   document.documentElement.lang = lang === "zh" ? "zh-CN" : lang;
