@@ -76,7 +76,7 @@
     if(page==="manual") return '<h1>'+d[0]+'</h1><p class="lead">'+d[1]+'</p><div class="cards"><a href="'+APP+'manual/mobile/?lang='+lang+'"><h2>📱 '+d[2]+'</h2><p>'+d[3]+'</p></a><a href="'+APP+'manual/aaos/?lang='+lang+'"><h2>🚗 '+d[4]+'</h2><p>'+d[5]+'</p></a></div>';
     const type = page === "mobile" ? "mobile" : "aaos", x = d;
     const shots = screenshots[type];
-    return '<h1>'+x[0]+'</h1><p class="lead">'+x[1]+'</p>'+section(x[2],x[3],shots[0])+section(x[4],x[5],shots[1])+section(x[6],x[7],shots[2])+section(x[8],x[9],shots[3])+section(x[10],x[11],shots[4])+section(quality[lang][type][0],quality[lang][type][1],shots[5])+(type==="aaos" ? section(vehicleDisplay[lang][0],vehicleDisplay[lang][1]) : '')+'<p class="footer">'+link("manual/",ui[lang].back)+" · "+link("support/",ui[lang].support)+'</p>';
+    return '<h1>'+x[0]+'</h1><p class="lead">'+x[1]+'</p>'+section(x[2],x[3],shots[0])+section(x[4],x[5],shots[1])+section(x[6],x[7],shots[2])+section(x[8],x[9],shots[3])+section(x[10],x[11],shots[4])+section(quality[lang][type][0],quality[lang][type][1],shots[5])+(type==="aaos" ? section(vehicleDisplay[lang][0],vehicleDisplay[lang][1],"vehicle-fullscreen-vu.gif") : '')+'<p class="footer">'+link("manual/",ui[lang].back)+" · "+link("support/",ui[lang].support)+'</p>';
   }
   const page = document.body.dataset.page || "home", d = docs[lang][page] || docs.en[page];
   document.documentElement.lang = lang === "zh" ? "zh-CN" : lang;
