@@ -68,7 +68,7 @@
   };
   const screenshots = {
     mobile:["library.png","library.png","library.png","lyrics.png","aaos-quality.png","aaos-dsp.png"],
-    aaos:["aaos-quality.png","library.png","library.png","lyrics.png","aaos-quality.png","aaos-dsp.png"]
+    aaos:["aaos-quality.png","library.png","aaos-media-center.png","lyrics.png","aaos-quality.png","aaos-dsp.png"]
   };
   const section = (h,p,shot) => '<section><h2>'+h+'</h2><p>'+p+'</p>'+(shot ? '<figure><img src="/apps/dreammusic/assets/screenshots/'+shot+'" alt="Dream Music Player AVD screen"><figcaption>Dream Music Player · AVD capture</figcaption></figure>' : '')+'</section>';
   function render(page, d) {
