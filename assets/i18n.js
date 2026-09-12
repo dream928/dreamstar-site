@@ -91,8 +91,8 @@
     pt:["Em reprodução","Depois de escolher uma faixa, o ecrã Em reprodução mostra capa, título e artista, posição, anterior/reproduzir-pausa/seguinte, aleatório, repetição e fila. As letras são procuradas online através das etiquetas de título e artista dos seus próprios ficheiros de áudio. Se não existirem online ou os metadados não estiverem corretos, pode não ser encontrada letra ou pode aparecer a letra de outra música com o mesmo título. Confirme a letra apresentada e sincronizada antes de reproduzir."]
   };
   const screenshots = {
-    mobile:["source-tab.png","library.png","library.png","now-playing.png","aaos-quality.png","aaos-dsp.png"],
-    aaos:["aaos-quality.png","library.png","aaos-media-center.png","lyrics.png","aaos-quality.png","aaos-dsp.png"]
+    mobile:["source-tab.png","library.png","library.png","vehicle-now-playing.png","aaos-quality.png","aaos-dsp.png"],
+    aaos:["aaos-quality.png","library.png","aaos-media-center.png","aaos-now-playing.png","aaos-quality.png","aaos-dsp.png"]
   };
   const section = (h,p,shot) => '<section><h2>'+h+'</h2><p>'+p+'</p>'+(shot ? '<figure><img src="/apps/dreammusic/assets/screenshots/'+shot+'" alt="Dream Music Player AVD screen"><figcaption>Dream Music Player · AVD capture</figcaption></figure>' : '')+'</section>';
   function render(page, d) {
