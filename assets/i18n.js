@@ -79,7 +79,7 @@
     pt:["Efeitos de campo sonoro Dream Pro FX","Em Definições > Som e volume > Motor de som, escolha Dream Pro FX. Hi-Fi Clarity & 3D Stage ajusta a correção de fase, a clareza dos agudos e o palco 3D; o Audio Restorer reconstrói harmónicos e transientes de alta frequência em áudio comprimido. Ative e ajuste separadamente Subharmonic Bass, Stereo Wide, Dynamic Remastering, Acoustic Reverb e o EQ Pro de 20 bandas. Comece com valores baixos e ajuste um efeito de cada vez: combinações intensas podem causar graves excessivos ou distorção. No veículo, configure apenas quando estiver estacionado."]
   };
   const screenshots = {
-    mobile:["library.png","library.png","library.png","lyrics.png","aaos-quality.png","aaos-dsp.png"],
+    mobile:["source-tab.png","library.png","library.png","lyrics.png","aaos-quality.png","aaos-dsp.png"],
     aaos:["aaos-quality.png","library.png","aaos-media-center.png","lyrics.png","aaos-quality.png","aaos-dsp.png"]
   };
   const section = (h,p,shot) => '<section><h2>'+h+'</h2><p>'+p+'</p>'+(shot ? '<figure><img src="/apps/dreammusic/assets/screenshots/'+shot+'" alt="Dream Music Player AVD screen"><figcaption>Dream Music Player · AVD capture</figcaption></figure>' : '')+'</section>';
