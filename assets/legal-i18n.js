@@ -15,13 +15,38 @@
     es:{privacy:["Política de privacidad de Dream Music Player","En vigor desde: 8 de septiembre de 2026","Dream Music Player (la Aplicación) proporciona esta política para proteger su información personal y los datos de Google Drive.","Acceso a Google Drive","Solo cuando decide conectar Drive y concede permiso a su cuenta de Google, la Aplicación usa acceso de solo lectura para explorar y reproducir archivos y carpetas de música. Puede acceder a nombres, tipos y metadatos necesarios para la reproducción.","Uso y almacenamiento","Los datos se usan solo para biblioteca, navegación de carpetas, búsqueda, información de álbum y reproducción. La información de biblioteca y el estado de conexión pueden almacenarse en su dispositivo. El contenido de Drive no se carga ni vende por el desarrollador.","Servicios de Google y cambios","La función Drive utiliza Google OAuth y Drive API, y cumple Google API Services User Data Policy y requisitos de Limited Use. Esta política puede actualizarse en esta página si cambian las funciones o las leyes.","Contacto","Puede desconectar Drive en la Aplicación o borrar los datos de la Aplicación en los ajustes del dispositivo. Contacto de privacidad: dreamstar928@gmail.com"],terms:["Términos de servicio de Dream Music Player","En vigor desde: 8 de septiembre de 2026","Servicio","La Aplicación le ayuda a explorar y reproducir archivos de música que posee o a los que está autorizado a acceder.","Sus responsabilidades","Debe cumplir la legislación y los derechos de autor aplicables, y tener el derecho legal de acceder o reproducir el contenido.","Google Drive","La conexión a Drive es opcional. Usted es responsable de gestionar los permisos de acceso a su cuenta de Google y archivos de Drive.","Cambios y contacto","Las funciones de la Aplicación pueden cambiar por mejoras, mantenimiento o motivos de política. Contacto: dreamstar928@gmail.com"],support:["Soporte de Dream Music Player","Para preguntas sobre la Aplicación, la conexión de Google Drive o compras, contáctenos en la dirección siguiente.","Incluya el modelo del dispositivo, versión de Android, versión de la Aplicación y una descripción del problema."]},
     pt:{privacy:["Política de privacidade do Dream Music Player","Em vigor desde: 8 de setembro de 2026","O Dream Music Player (a Aplicação) disponibiliza esta política para proteger as suas informações pessoais e dados do Google Drive.","Acesso ao Google Drive","Apenas quando optar por ligar o Drive e conceder permissão à sua conta Google, a Aplicação usa acesso só de leitura para explorar e reproduzir ficheiros e pastas de música. Pode aceder a nomes, tipos e metadados necessários à reprodução.","Utilização e armazenamento","Os dados são utilizados apenas para biblioteca, navegação de pastas, pesquisa, informações do álbum e reprodução. As informações da biblioteca e o estado de ligação podem ser guardados no seu dispositivo. O conteúdo Drive não é carregado nem vendido pelo programador.","Serviços Google e alterações","A função Drive utiliza Google OAuth e Drive API e segue a Google API Services User Data Policy e os requisitos Limited Use. Esta política pode ser atualizada nesta página quando as funções ou leis mudarem.","Contacto","Pode desligar o Drive na Aplicação ou eliminar dados da Aplicação nas definições do dispositivo. Contacto de privacidade: dreamstar928@gmail.com"],terms:["Termos de serviço do Dream Music Player","Em vigor desde: 8 de setembro de 2026","Serviço","A Aplicação ajuda a explorar e reproduzir ficheiros de música que possui ou aos quais está autorizado a aceder.","As suas responsabilidades","Deve cumprir a lei e os direitos de autor aplicáveis e ter o direito legítimo de aceder ou reproduzir o conteúdo.","Google Drive","A ligação ao Drive é opcional. É responsável por gerir as permissões de acesso à sua conta Google e aos ficheiros Drive.","Alterações e contacto","As funções da Aplicação podem mudar por melhoria, manutenção ou razões de política. Contacto: dreamstar928@gmail.com"],support:["Apoio do Dream Music Player","Para questões sobre a Aplicação, ligação ao Google Drive ou compras, contacte-nos no endereço abaixo.","Inclua o modelo do dispositivo, a versão Android, a versão da Aplicação e uma descrição do problema."]}
   };
+  content.ko.privacy = [
+    "Dreamonic Player 개인정보처리방침",
+    "시행일: 2026년 9월 24일",
+    "Dreamonic Player(이하 ‘앱’)는 사용자의 개인정보와 Google Drive 데이터를 보호하기 위해 이 방침을 제공합니다.",
+    "Google Drive 데이터 접근",
+    "사용자가 Google Drive 연결 기능을 직접 선택하고 Google 계정 권한을 허용한 경우, 앱은 음악 파일과 폴더를 탐색하고 재생하기 위해 읽기 전용 권한을 사용합니다. 파일명, 폴더명, 파일 형식, 재생에 필요한 메타데이터 및 사용자가 선택한 미디어 콘텐츠에 접근할 수 있습니다.",
+    "데이터 이용 목적",
+    "접근한 데이터는 음악 라이브러리 표시, 폴더 탐색, 검색, 앨범 정보 표시 및 음악 재생 기능을 제공하기 위해서만 사용됩니다. 광고, 프로파일링 또는 제3자 제공 목적으로 사용하지 않습니다.",
+    "데이터 저장 및 공유",
+    "파일명, 폴더명, 파일 형식, 재생에 필요한 메타데이터와 연결 상태는 빠른 탐색과 재생을 위해 기기에 저장될 수 있습니다. Google Drive의 파일 콘텐츠, 폴더 목록 또는 재생 데이터는 개발자 서버에 업로드하거나 판매하지 않습니다.",
+    "공유 대상 및 제3자 제공",
+    "Google Drive 기능을 사용할 때 Google OAuth 및 Google Drive API 요청은 Google LLC로 전송됩니다. 차량 라이선스 기능을 사용하는 경우에 한해 구매 계정 확인과 차량 라이선스 발급에 필요한 인증 정보가 라이선스 서버로 전송될 수 있습니다. 이 과정에서 Google Drive 파일, 폴더 목록 및 파일 콘텐츠는 라이선스 서버로 전송되지 않으며, 차량 라이선스 인증은 Google Drive 음악 소스 로그인과 별개입니다.",
+    "데이터 보호 방법",
+    "OAuth 인증과 Google API 통신에는 Google의 공식 OAuth 흐름과 HTTPS 연결을 사용합니다. 연결 상태와 음악 라이브러리 정보는 Android 앱 전용 저장공간에 보관하며, 앱은 Drive 파일을 생성·수정·삭제·이동·공유하지 않고 읽기 전용으로 처리합니다.",
+    "보유 기간 및 삭제",
+    "Google Drive 데이터와 관련 로컬 캐시는 음악 탐색과 재생에 필요한 기간 동안만 기기에 보관합니다. 앱에서 Google Drive 연결을 해제하거나 기기 설정에서 앱 데이터를 삭제하면 저장된 연결 정보와 로컬 라이브러리를 삭제할 수 있습니다. 차량 라이선스 인증 정보는 라이선스 유효기간과 부정 사용 방지에 필요한 기간 동안만 처리합니다.",
+    "Google API 데이터 사용",
+    "앱의 Google 사용자 데이터 사용은 Google API Services User Data Policy 및 Limited Use 요건을 준수합니다.",
+    "제3자 서비스",
+    "Google Drive 기능은 Google LLC가 제공하는 Google OAuth 및 Google Drive API를 사용합니다. 해당 서비스의 데이터 처리는 Google의 정책이 적용될 수 있습니다.",
+    "개인정보처리방침 변경",
+    "기능 또는 관련 법령의 변경에 따라 이 방침을 수정할 수 있으며, 변경 내용은 이 페이지에 게시합니다.",
+    "문의",
+    "개인정보 관련 문의: dreamstar928@gmail.com"
+  ];
   const link = (path,label) => '<a href="'+root+path+'?lang='+lang+'">'+label+'</a>';
   const [type] = [document.body.dataset.page];
   const d = content[lang][type] || content.en[type];
   const home = {ko:"Dream Music Player 홈으로",en:"Back to Dream Music Player",zh:"返回 Dream Music Player",de:"Zurück zu Dream Music Player",no:"Tilbake til Dream Music Player",fr:"Retour à Dream Music Player",nl:"Terug naar Dream Music Player",it:"Torna a Dream Music Player",es:"Volver a Dream Music Player",pt:"Voltar ao Dream Music Player"}[lang];
   const selector = '<label class="locale"><span aria-hidden="true">🌐 </span><select id="locale" aria-label="Language">'+Object.entries(languages).map(([k,v])=>'<option value="'+k+'" '+(k===lang?"selected":"")+'>'+v+'</option>').join("")+'</select></label>';
   let html = '<h1>'+d[0]+'</h1>';
-  if(type === "privacy") html += '<p class="date">'+d[1]+'</p><p>'+d[2]+'</p>'+[3,5,7,9].map(i=>'<section><h2>'+d[i]+'</h2><p>'+d[i+1]+'</p></section>').join('');
+  if(type === "privacy") html += '<p class="date">'+d[1]+'</p><p>'+d[2]+'</p>'+Array.from({length:Math.floor((d.length-3)/2)},(_,n)=>3+n*2).map(i=>'<section><h2>'+d[i]+'</h2><p>'+d[i+1]+'</p></section>').join('');
   if(type === "terms") html += '<p class="date">'+d[1]+'</p>'+[2,4,6,8].map(i=>'<section><h2>'+d[i]+'</h2><p>'+d[i+1]+'</p></section>').join('');
   if(type === "support") html += '<p>'+d[1]+'</p><p><a href="mailto:dreamstar928@gmail.com">dreamstar928@gmail.com</a></p><p>'+d[2]+'</p>';
   document.documentElement.lang = lang === "zh" ? "zh-CN" : lang;
