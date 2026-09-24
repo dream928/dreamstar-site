@@ -40,10 +40,13 @@
     "문의",
     "개인정보 관련 문의: dreamstar928@gmail.com"
   ];
+  Object.values(content).forEach(locale => {
+    if (locale.privacy) locale.privacy = locale.privacy.map(value => typeof value === "string" ? value.replaceAll("Dream Music Player", "Dreamonic Player") : value);
+  });
   const link = (path,label) => '<a href="'+root+path+'?lang='+lang+'">'+label+'</a>';
   const [type] = [document.body.dataset.page];
   const d = content[lang][type] || content.en[type];
-  const home = {ko:"Dream Music Player 홈으로",en:"Back to Dream Music Player",zh:"返回 Dream Music Player",de:"Zurück zu Dream Music Player",no:"Tilbake til Dream Music Player",fr:"Retour à Dream Music Player",nl:"Terug naar Dream Music Player",it:"Torna a Dream Music Player",es:"Volver a Dream Music Player",pt:"Voltar ao Dream Music Player"}[lang];
+  const home = {ko:"Dreamonic Player 홈으로",en:"Back to Dreamonic Player",zh:"返回 Dreamonic Player",de:"Zurück zu Dreamonic Player",no:"Tilbake til Dreamonic Player",fr:"Retour à Dreamonic Player",nl:"Terug naar Dreamonic Player",it:"Torna a Dreamonic Player",es:"Volver a Dreamonic Player",pt:"Voltar ao Dreamonic Player"}[lang];
   const selector = '<label class="locale"><span aria-hidden="true">🌐 </span><select id="locale" aria-label="Language">'+Object.entries(languages).map(([k,v])=>'<option value="'+k+'" '+(k===lang?"selected":"")+'>'+v+'</option>').join("")+'</select></label>';
   let html = '<h1>'+d[0]+'</h1>';
   if(type === "privacy") html += '<p class="date">'+d[1]+'</p><p>'+d[2]+'</p>'+Array.from({length:Math.floor((d.length-3)/2)},(_,n)=>3+n*2).map(i=>'<section><h2>'+d[i]+'</h2><p>'+d[i+1]+'</p></section>').join('');
