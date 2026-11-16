@@ -31,20 +31,19 @@
 
       if (code) {
         sessionStorage.setItem('tiktok_auth_code', code);
+        localStorage.setItem('tiktok_auth_code', code);
         sessionStorage.setItem('tiktok_connected', '1');
 
-        // PHP 서버(api.php)가 있을 경우 토큰 교환 요청
+        // 로컬 토큰 교환 서버(127.0.0.1:5000)가 켜져 있으면 자동으로 code 전달하여 tokens.json 발급
         try {
-          await fetch('./api.php?action=token', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ code: code })
+          await fetch('http://127.0.0.1:5000/callback?code=' + encodeURIComponent(code), {
+            mode: 'no-cors'
           });
         } catch (_) {}
       }
 
       setTimeout(() => {
-        window.location.href = '../index.html';
+        window.location.href = '../';
       }, 900);
     })();
   </script>
