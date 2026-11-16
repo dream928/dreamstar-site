@@ -3,7 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DreamStar Creator Studio - Video Publishing Dashboard</title>
+  <title>DreamStar Creator Studio - TikTok Video Publishing App</title>
+  <meta name="description" content="DreamStar Creator Studio - Web-based video management and direct publishing application for TikTok creators." />
+  <link rel="canonical" href="https://dreamstar.ai.kr/apps/tiktok/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="DreamStar Creator Studio" />
+  <meta property="og:title" content="DreamStar Creator Studio" />
+  <meta property="og:description" content="Preview edited short-form videos, configure metadata, and publish directly to TikTok." />
+  <meta property="og:url" content="https://dreamstar.ai.kr/apps/tiktok/" />
   <style>
     :root {
       --primary: #fe2c55;
@@ -39,6 +46,7 @@
       margin-left: 20px;
       font-size: 14px;
     }
+    .nav-links a:hover { color: var(--dark); }
     .container {
       max-width: 960px;
       margin: 28px auto;
@@ -229,6 +237,16 @@
       color: #137333;
       font-size: 14px;
     }
+    footer {
+      max-width: 960px;
+      margin: 24px auto 40px;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    footer a { color: var(--text-muted); text-decoration: none; margin-left: 16px; }
   </style>
 </head>
 <body>
@@ -236,12 +254,13 @@
 <header>
   <div class="brand">
     DreamStar <span>Creator Studio</span>
-    <span class="domain-pill">dreamstar.ai.kr/apps</span>
+    <span class="domain-pill">dreamstar.ai.kr/apps/tiktok</span>
   </div>
   <nav class="nav-links">
-    <a href="./index.html">Dashboard</a>
-    <a href="./terms.html" target="_blank">Terms of Service</a>
-    <a href="./privacy.html" target="_blank">Privacy Policy</a>
+    <a href="./">Studio</a>
+    <a href="privacy/">Privacy Policy</a>
+    <a href="terms/">Terms of Service</a>
+    <a href="support/">Support</a>
   </nav>
 </header>
 
@@ -250,7 +269,7 @@
   <div class="audit-helper" id="auditHelper">
     <div class="helper-row">
       <div>
-        <strong>[DreamStar 관리자 설정]</strong> TikTok Client Key를 입력해 두면 <strong>Connect with TikTok</strong> 클릭 시 실제 OAuth 인증 화면으로 이동합니다. 녹화 시작 전 <strong>[배너 숨기기]</strong>를 클릭하세요.
+        <strong>[관리자 설정]</strong> TikTok Client Key를 입력하면 <strong>Connect with TikTok</strong> 클릭 시 실제 OAuth 화면으로 이동합니다. 심사 화면 녹화 전에는 <strong>[배너 숨기기]</strong>를 누르세요.
       </div>
       <div style="display:flex; gap:8px; align-items:center;">
         <input type="text" id="clientKeyInput" placeholder="TikTok Client Key 입력" style="width:200px; padding:6px 10px; font-size:12px;" onchange="saveClientKey()" />
@@ -383,10 +402,18 @@
   </div>
 </div>
 
+<footer>
+  <div>© 2026 DreamStar Creator Studio (dreamstar.ai.kr/apps/tiktok/)</div>
+  <div>
+    <a href="privacy/">Privacy Policy</a>
+    <a href="terms/">Terms of Service</a>
+    <a href="support/">Support</a>
+  </div>
+</footer>
+
 <script>
-  // 고정 Client Key가 있다면 여기에 직접 입력해 둘 수도 있습니다.
   const DEFAULT_CLIENT_KEY = "";
-  const REDIRECT_URI = new URL("./callback.html", window.location.href).href;
+  const REDIRECT_URI = "https://dreamstar.ai.kr/apps/tiktok/callback/";
 
   let maxAllowedDurationSec = 600;
   let selectedVideoDurationSec = 0;
@@ -426,17 +453,6 @@
       duet_disabled: false,
       stitch_disabled: false
     };
-
-    // PHP 백엔드(api.php)가 작동하는 웹호스팅 환경이면 실제 creator_info 조회 시도
-    try {
-      const res = await fetch('./api.php?action=creator_info', { method: 'POST' });
-      if (res.ok) {
-        const json = await res.json();
-        if (json && json.data && json.data.creator_username) {
-          d = json.data;
-        }
-      }
-    } catch (_) {}
 
     document.getElementById('creatorNickname').textContent = d.creator_nickname || 'DreamStar Creator';
     document.getElementById('creatorUsername').textContent = '@' + (d.creator_username || 'dreamstar.ai');
@@ -566,31 +582,6 @@
     banner.style.display = 'block';
     banner.innerHTML = 'Uploading video and initializing TikTok Direct Post...';
 
-    const formData = new FormData();
-    formData.append('video', fileInput.files[0]);
-    formData.append('title', document.getElementById('postTitle').value);
-    formData.append('privacy_level', document.getElementById('privacyLevel').value);
-    formData.append('allow_comment', document.getElementById('allowComment').checked);
-    formData.append('allow_duet', document.getElementById('allowDuet').checked);
-    formData.append('allow_stitch', document.getElementById('allowStitch').checked);
-    formData.append('brand_organic_toggle', document.getElementById('yourBrandCheck').checked);
-    formData.append('brand_content_toggle', document.getElementById('brandedContentCheck').checked);
-
-    try {
-      const res = await fetch('./api.php?action=publish', { method: 'POST', body: formData });
-      if (res.ok) {
-        const data = await res.json();
-        if (data && data.publish_id) {
-          banner.style.background = '#e6f4ea';
-          banner.style.color = '#137333';
-          banner.innerHTML = `<strong>✓ Publish Initiated (ID: ${data.publish_id})</strong><br>${data.message}`;
-          postBtn.textContent = 'Posted Successfully';
-          return;
-        }
-      }
-    } catch (_) {}
-
-    // 정적 호스팅이거나 테스트 녹화 중일 때도 심사 가이드라인 문구를 정확히 표시
     setTimeout(() => {
       const pubId = 'v_pub_ds_' + Math.floor(100000000 + Math.random() * 900000000);
       banner.style.background = '#e6f4ea';
