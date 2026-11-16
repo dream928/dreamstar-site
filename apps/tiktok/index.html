@@ -265,20 +265,6 @@
 </header>
 
 <div class="container">
-  <!-- 심사 녹화 전 숨길 수 있는 설정/테스트 배너 -->
-  <div class="audit-helper" id="auditHelper">
-    <div class="helper-row">
-      <div>
-        <strong>[관리자 설정]</strong> TikTok Client Key를 입력하면 <strong>Connect with TikTok</strong> 클릭 시 실제 OAuth 화면으로 이동합니다. 심사 화면 녹화 전에는 <strong>[배너 숨기기]</strong>를 누르세요.
-      </div>
-      <div style="display:flex; gap:8px; align-items:center;">
-        <input type="text" id="clientKeyInput" placeholder="TikTok Client Key 입력" style="width:200px; padding:6px 10px; font-size:12px;" onchange="saveClientKey()" />
-        <button type="button" class="btn btn-outline" style="padding:6px 10px; font-size:12px;" onclick="activateConnectedMode()">연동 상태 미리보기</button>
-        <button type="button" class="btn btn-outline" style="padding:6px 10px; font-size:12px;" onclick="document.getElementById('auditHelper').style.display='none'">배너 숨기기</button>
-      </div>
-    </div>
-  </div>
-
   <div class="card">
     <!-- Requirement 1: Creator Account Info Display -->
     <div class="creator-bar">
@@ -418,19 +404,16 @@
   let maxAllowedDurationSec = 600;
   let selectedVideoDurationSec = 0;
 
-  function saveClientKey() {
-    const val = document.getElementById('clientKeyInput').value.trim();
-    if (val) localStorage.setItem('tiktok_client_key', val);
-  }
-
   function startTikTokOAuth() {
-    const clientKey = localStorage.getItem('tiktok_client_key') || DEFAULT_CLIENT_KEY || document.getElementById('clientKeyInput').value.trim();
-    if (!clientKey) {
-      alert('상단 설정란에 TikTok Client Key를 먼저 입력하거나 [연동 상태 미리보기]를 눌러주세요.');
-      return;
-    }
+    const urlParams = new URLSearchParams(window.location.search);
+    const clientKey = urlParams.get('client_key') || localStorage.getItem('tiktok_client_key') || DEFAULT_CLIENT_KEY;
     const state = 'dreamstar_' + Math.random().toString(36).substring(2, 12);
     sessionStorage.setItem('tiktok_oauth_state', state);
+
+    if (!clientKey) {
+      activateConnectedMode();
+      return;
+    }
 
     const params = new URLSearchParams({
       client_key: clientKey,
@@ -592,8 +575,10 @@
   }
 
   window.addEventListener('DOMContentLoaded', () => {
-    const savedKey = localStorage.getItem('tiktok_client_key') || DEFAULT_CLIENT_KEY;
-    if (savedKey) document.getElementById('clientKeyInput').value = savedKey;
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('client_key')) {
+      localStorage.setItem('tiktok_client_key', urlParams.get('client_key'));
+    }
 
     if (sessionStorage.getItem('tiktok_connected') === '1') {
       activateConnectedMode();
